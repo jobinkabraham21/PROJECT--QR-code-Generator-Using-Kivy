@@ -1,0 +1,24 @@
+# QR APP SCREEN LAYOUT
+#: kivy 2.0.0
+
+<MyScreen>:
+    FloatLayout:
+        size: root.width,root.height
+        pos: 0,0
+        TextInput:
+            id:qr_text
+            text:"Enter Data for QR"
+            pos_hint: {"x" : .1, "y" : .7}
+            size_hint:.8,.2
+            background_color:(1,1,1,1)
+        Button:
+            text:"Generate My QR"
+            pos_hint: {"x" : .1, "y" : .5}
+            size_hint: .8,.1
+            background_color:(0,0,1,1)
+            on_press: root.genimg(qr_text.text)
+        Image:
+            id: my_image
+            pos_hint: {"x" : .1, "y" : .1}
+            size_hint: .8,.4
+            source: "QRsample.png"
